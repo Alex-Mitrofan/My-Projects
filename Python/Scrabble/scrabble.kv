@@ -1,0 +1,162 @@
+#:kivy 2.1.0
+MainWidget:
+
+#:set background_color .9,.9,.9
+
+<MainWidget>:
+    orientation: "vertical"
+    #HEADER. this is the top section with my score and computer score
+    Header:
+        
+    #CENTER. this is the center section. it includes the board and the right panel with buttons
+    BoxLayout:
+        orientation: "horizontal"
+        #LEFT bar from center, it is empty, only has color
+        Label:
+            canvas.before:
+                Color:
+                    rgb: background_color
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+            color: 1,0,0,1
+            #text: "Left"
+            size_hint: 0.03, 1
+        #BOARD, this contains the grid with the board
+        BoardGrid:
+          
+        #RIGHT, this contains the right panel with last played words and buttons
+        Right:
+
+    #FOOTER. this is the bottom section wich includes the player's cards
+    BoxLayout:
+        canvas.before:
+            Color:
+                rgb: background_color
+            Rectangle:
+                size: self.size
+                pos: self.pos
+        orientation: "horizontal"
+        size_hint: 1, 0.2
+        #LEFT this is an empty space
+        Label:
+            size_hint: 0.03, 1
+        Tiles:
+        #RIGHT there is a button
+        Label:
+            size_hint: 0.2, 1
+     
+
+
+
+<BoardGrid>:
+    canvas.before:
+        Color:
+            rgb: background_color
+        Rectangle:
+            size: self.size
+            pos: self.pos
+    rows: 15
+    cols: 15
+    size_hint: 0.77, 1
+
+   # color: 1,0,0,1
+    #text: "BOARD"
+    
+<Tiles>:
+    color: 1,0,0,1   
+    size_hint: 0.77, 1
+    cols: 7
+    rows: 1
+    spacing: 15
+    padding: 2,10
+
+
+<Header>:
+    size_hint: 1, 0.1
+    color: 0,0,0 #black text color
+    padding: 0,10
+    canvas.before:
+        Color:
+            rgb: background_color
+        Rectangle:
+            size: self.size
+            pos: self.pos
+    color: 0,0,0,1 #black text color
+    #this label contains Player's score
+    Label:
+        text: app.score_player1
+        color: 0,0,0,1 #black text color
+        size_hint: 0.25,1
+        
+    #label for game's messages
+    Label:
+        text: app.turn
+        color: 0,0,0,1 
+        size_hint: 0.5,1
+                    #add a border to message box
+        canvas.before:
+            Color:
+                rgba: (0.4,0.4,0.4,1)
+            Line:
+                width: 0.5
+                rectangle: self.x, self.y, self.width, self.height           
+                    
+    #Label for PC's score
+    Label:
+        text: app.score_player2
+        color: 0,0,0,1 #black text color
+        size_hint: 0.25,1
+
+
+<Right>:
+    orientation: "vertical"
+    size_hint: 0.2, 1
+    spacing: 10
+    padding: 10,10
+    canvas.before:
+        Color:
+            rgb: background_color
+        Rectangle:
+            size: self.size
+            pos: self.pos
+  
+    Label:
+        text: "Last words played"
+        color: 0,0,0,1 #black text color
+        size_hint: 1, 0.08
+    Label:
+        size_hint: 1,0.52
+        color: 0,0,0,1 #black text color
+        text: app.words
+        canvas.before:
+            Color:
+                rgba: (0.4,0.4,0.4,1)
+            Line:
+                width: 0.5
+                rectangle: self.x, self.y, self.width, self.height   
+   
+    BoxLayout:
+        orientation: 'vertical'
+        size_hint: 0.7,0.4
+        pos_hint: {"x": 0.15}    #buttons are in the middle on x axis
+        spacing: 10
+        Button:
+            text: "Play"
+            background_color: 0,1,0,1
+            on_press: root.on_button_play_click()
+        Button:
+            text: "Clear"
+            background_color: 0.55,0.77,0.22,1
+            on_press: root.on_button_clear_click()
+        #Button:
+        #    text: "Swap"
+        #    background_color: 0.55,0.77,0.22,1
+        Button:
+            text: "Pass"
+            background_color: 1,0.3,0.3,1
+            on_press: root.on_button_pass_click()
+            
+       
+        
+        
