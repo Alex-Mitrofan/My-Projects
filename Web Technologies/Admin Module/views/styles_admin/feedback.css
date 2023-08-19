@@ -1,0 +1,23 @@
+nav ul li:nth-child(3){
+    border-bottom: 0.2em solid rgb(181, 209, 224);
+}
+
+nav ul li:nth-child(3) a{
+    color: white;
+}
+
+.div_articles{
+    display: flex;
+    flex-direction: column;
+    padding-left: 1.5em;
+}
+
+.feedback{
+    border-bottom: 0.1em solid black;
+    width: 90%;
+}
+
+h3{
+    border-bottom: 0.1em solid black;
+    width: 90%;
+}

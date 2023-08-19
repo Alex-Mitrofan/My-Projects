@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Manners Matter</title>
+    <link rel="icon" type="image/x-icon" href="./../Manners Matter/views/images/favicon.png">
+    <link rel="stylesheet" href="./views/styles_admin/style.css">
+    <link rel="stylesheet" href="./views/styles_admin/add_articles.css">
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <a href="Admin_Advice">Manners Matter</a>
+      </div>
+      <div class="title">
+         Add Articles
+      </div>
+      <div class="profile">
+        <div class="username">
+          <a href="Admin_Login">Login</a>
+        </div>
+        <div class="dropdown_profile">
+          <div class="avatar">
+          </div>
+
+          <div class="dropdown_content">
+            <a href="Admin_Login">Logout</a>
+          </div>
+        </div>
+      </div>
+
+  </header>
+    <main>
+        <nav>
+            <ul>
+              <li>
+                <a href="Admin_Advice">Add Advices</a>
+              </li>
+              <li>
+                <a href="Admin_Question">Add Questions</a>
+              </li>
+              <li>
+                <a href="Admin_Feedback">View the feedback</a>
+              </li>
+              <li>
+                <a href="Admin_Articles">Add Articles</a>
+              </li>
+            </ul>
+          </nav>
+        
+        <div class="div_articles">
+          <form>
+            <label for="title">Title:</label><br>
+            <input type="text" id="title" name="title" required><br>
+            <label for="descritpion">Description:</label><br>
+            <input type="text" id="descritpion" name="descritpion" required><br>
+
+            <label for="date">Date:</label><br>
+            <input type="text" id="date" name="date" required><br>
+
+            <label for="source">Source:</label><br>
+            <input type="text" id="source" name="source" required><br>
+
+            <label for="image">Image:</label><br>
+            <input type="file" id="image" name="image" accept="image/png, image/jpeg" required><br>
+            <br>
+            <label for="html">Add html code:</label><br>
+            <input type="text" id="html" name="html" required><br>
+            <br>
+            <input class="submit_button" type="submit" value="Add" >
+            
+          </form>
+            
+      </div>
+
+       
+
+
+    </main>
+    <footer>
+        Copyright © 2023 
+    </footer>
+	 
+  </body>
+</html>

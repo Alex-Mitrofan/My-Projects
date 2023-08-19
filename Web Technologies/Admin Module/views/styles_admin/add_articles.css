@@ -1,0 +1,33 @@
+.submit_button{
+    background-color: rgb(52, 179, 52);
+    padding: 0.5em 1em;
+    border-radius: 1em;
+}
+
+form{
+    padding: 2em;
+}
+
+#html{
+    width: 30em;
+    height: 5em;
+}
+
+input{
+    margin-bottom: 1em;
+}
+
+@media screen and (max-width:490px) {
+
+    #html{
+    width: 25em;
+    height: 5em;
+}
+}
+@media screen and (max-width:429px) {
+
+    #html{
+    width: 20em;
+    height: 5em;
+}
+}
