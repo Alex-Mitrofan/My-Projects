@@ -1,0 +1,46 @@
+nav ul li:nth-child(7){
+    border-bottom: 0.2em solid rgb(181, 209, 224);
+}
+
+nav ul li:nth-child(7) a{
+    color: white;
+}
+
+.div_articles{
+    display: flex;
+    flex-direction: column;
+    padding-left:3em;
+}
+
+.email_box{
+    margin-bottom: 2em;
+    width: 20em;
+}
+
+.input_box{
+    width:45em;
+    height:10em;
+}
+
+.submit_button{
+    margin-top: 1em;
+}
+
+.submit_button button{
+    background-color: rgb(140, 222, 171);
+    border-radius: 1em;
+    padding: 0.4em 1em;
+}
+
+
+@media screen and (max-width: 670px){
+    .input_box{
+        width:25em;
+    }
+}
+
+@media screen and (max-width: 405px){
+    .input_box{
+        width:20em;
+    }
+}

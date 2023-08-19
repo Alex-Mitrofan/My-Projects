@@ -1,0 +1,291 @@
+html{
+    height: 100%;
+}
+
+body {
+    margin: 0;   
+    font-family: Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    background-color: rgb(240, 240, 240);
+}
+ 
+header {
+    padding: 0.1em;  
+    background-color: rgb(83 124 167);
+    background-image: linear-gradient(rgb(0 0 0), rgb(0 0 0 / 53%));
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+  
+}
+
+
+.logo {
+    padding-left: 0.2em;
+    font-family: "Logo";
+    font-size: 2.3em;
+    -webkit-text-stroke: 0.05em black;
+    color:rgb(255, 255, 255)
+}
+
+.logo a:visited {
+    font-family: "Logo";
+    font-size: 2em;
+    -webkit-text-stroke: 0.05em black;
+    color:rgb(255, 255, 255)
+}
+
+
+.title {
+    font-size: 1.5em;
+    margin-left: -1em;
+    color:rgb(255, 255, 255)
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+     
+}
+
+
+.username a{
+    color:rgb(255, 255, 255);
+}
+
+.username a:visited:hover{
+    color: rgb(39, 87, 197);
+}
+
+.username a:hover{
+    color: rgb(39, 87, 197);
+}
+
+
+.username a:visited{
+    color:rgb(255, 255, 255)
+}
+
+.avatar {
+    border-radius: 50%;
+    background-image: url("../images/avatar.png");
+    width: 3.5em; 
+    height: 3.5em;
+    vertical-align: middle; 
+    background-size: auto 100%;
+}
+
+.dropdown_profile{
+    display: flex;
+    flex-direction: column;
+    padding-top: 0.4em;
+    padding-bottom: 0.4em;
+    padding-left: 1em;
+    width: 5em;
+}
+
+.dropdown_content{
+    display:none;   
+    position: fixed;
+    flex-direction: column;
+    margin-top: 4em;
+    background-color: rgb(211, 211, 211);
+    width: 6.2em;
+    border: 0.02em solid black;
+}
+
+.dropdown_content a{
+    padding:0.6em;
+    padding-right: 0.1em;
+}
+
+.dropdown_content a:hover{
+    color:rgb(13, 193, 55);
+}
+
+.dropdown_content a:nth-child(1) {
+    border-bottom: 0.02em solid black;
+}
+
+
+.dropdown_profile:hover .dropdown_content{
+    display: flex;
+    align-self:last baseline;
+}
+
+main {
+    display: flex;  
+}
+
+nav {   
+    background-color: rgb(111 123 141);
+    margin-left: 1.5em;
+    margin-right: 1.5em;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 0;
+     
+}
+
+nav ul li {
+    padding: 1.5em;
+    font-size: 1.1em;
+    border-bottom: 0.2em solid rgb(127 153 167);
+    width: 50%;
+}
+
+nav ul li:hover{
+    border-bottom: 0.2em solid rgb(181, 209, 224);
+}
+
+ 
+li a:hover {
+    color: rgb(255, 255, 255);
+}
+
+.section {
+    margin: 1em; 
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.div_articles {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    
+}
+
+
+footer {
+    background-color: rgb(83 124 167);
+    background-image: linear-gradient(rgb(0 0 0), rgb(0 0 0 / 53%));
+    padding: 2em;
+    color: white;
+    margin-top: auto;
+     
+}
+
+
+a {
+    text-decoration: none;
+  }
+
+a:link {
+    color: rgb(0, 0, 0); 
+}
+
+ 
+a:visited{ 
+    color: rgb(0, 0, 0); 
+}
+
+@font-face {
+font-family: Logo;
+src: url("../fonts/LilitaOne-Regular.ttf");
+}
+
+
+
+@media screen and (max-width: 1100px){
+section{
+    margin-left: 0;
+    margin-right: 0;
+}
+}
+
+@media screen and (max-width: 1030px){
+    nav{
+        margin-left: 0;
+    }
+
+    }
+
+@media screen and (max-width: 980px){
+    nav{
+        margin-right: 0;
+    }
+    main {
+        flex-direction: column;  
+    }
+
+    nav ul{
+        flex-direction: row;
+    }
+
+    nav ul li{
+        padding: 1em;
+    }
+
+    section{
+        margin-left: 1em;
+        margin-right: 1em;
+    }
+
+    .title{
+        display: none;
+    }
+
+}
+
+@media screen and (max-width: 714px){
+
+    nav ul li{
+        width:100%;
+        padding-right: 0;
+        font-size: 0.9em;
+    }
+    nav ul li:nth-child(1){
+        display:none;
+    }
+
+}
+
+@media screen and (max-width: 600px){
+
+    nav ul li{
+        width:100%;
+        padding-right: 0;
+        font-size: 0.9em;
+    }
+
+    nav ul li:nth-child(2){
+        display:none;
+    }
+
+    .logo{
+        font-size: 2em;
+        width: 5em;
+    }
+
+}
+
+@media screen and (max-width: 430px){  
+    .article_image {
+        max-width: 20em;
+        max-height: 12em;
+    }
+
+    article{
+        width: 80%;  
+    }
+    .div_articles{
+        width: 94%;  
+    }
+    .logo{
+        font-size: 1.5em;
+        width: 5em;
+    }
+
+
+ }

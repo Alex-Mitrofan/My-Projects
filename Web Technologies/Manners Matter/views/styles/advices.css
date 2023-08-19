@@ -1,0 +1,45 @@
+nav ul li:nth-child(3){
+    border-bottom: 0.2em solid rgb(181, 209, 224);
+}
+
+nav ul li:nth-child(3) a{
+    color: white;
+}
+
+.div_articles{
+    flex-direction: column;
+}
+
+form{
+    margin-left: 4em;
+    margin-top: 2em;
+    width: fit-content;
+}
+
+.submit_button {
+    margin-top: 1em;
+}
+
+.submit_button button{
+    background-color: rgb(140, 222, 171);
+    border-radius: 1em;
+    padding: 0.4em 1em;
+}
+
+.list_of_advices{
+    margin-left: 4em;
+    margin-top: 2em;
+}
+
+.list_of_advices li{
+    padding-bottom: 0.5em;
+}
+
+@media screen and (max-width: 690px){
+    form{
+        margin-left: 1em;
+    }
+    .list_of_advices{
+        margin-left: 1em;
+    }
+}

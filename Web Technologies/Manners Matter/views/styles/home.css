@@ -1,0 +1,149 @@
+.article_image {
+    width: auto;
+    height: auto;
+    max-width: 30em;
+    max-width: 25em;
+}
+
+article {
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    display: flex;
+    border-bottom: 0.1em solid rgb(65, 65, 65);
+    border-top: 0.1em solid rgb(65, 65, 65);
+    margin-bottom: 1em;
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around; 
+}
+ 
+a:hover {
+    color: rgb(13, 193, 55)
+}
+
+img{
+    border-left: 0.08em solid rgb(65, 65, 65);
+    
+}
+
+section{
+    display: flex;
+    flex-direction: column;
+}
+
+.pages{
+    align-self: center;
+}
+
+nav ul li:nth-child(1){
+    border-bottom: 0.2em solid rgb(181, 209, 224);
+}
+
+nav ul li:nth-child(1) a{
+    color: white;
+}
+.pagination
+{
+  display:flex;
+  justify-content: end;
+  width:70%;
+  padding:10px 20px;
+}
+.pagination div a{
+    padding: 10px;
+    border:2px solid #d5d0d0;
+    height:40px;
+    width:40px;
+    border-radius:100%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-color:rgb(111 123 141);
+    color:white;
+    box-shadow:0px 0px 4px 0px ;
+    margin:0 5px;
+}
+
+
+
+@media screen and (max-width: 1170px){
+    .pagination{
+        width:78%;
+    }    
+}
+
+
+
+@media screen and (max-width: 1130px){
+    article{
+        width: 100%;
+    }
+ }
+
+
+@media screen and (max-width: 990px){
+    .pagination{
+        width:85%;
+    }    
+}
+
+@media screen and (max-width: 775px){
+    article{
+        flex-direction: column;
+    }
+
+    img{
+        border: 0.08em solid rgb(65, 65, 65);
+        
+    }
+}
+
+@media screen and (max-width: 745px){
+    .pagination{
+        width:80%;
+    } 
+    .pagination div a{
+        padding: 0.2em;
+    }   
+}
+
+@media screen and (max-width: 680px){
+    .pagination{
+        width:90%;
+    } 
+}
+
+@media screen and (max-width: 530px){
+    .pagination{
+        width:90%;
+    } 
+    .pagination div a{
+        margin:0.1em;
+    }
+}
+
+@media screen and (max-width: 460px){
+    .pagination div a{
+       height: 2em;
+       width: 2em;
+    }
+
+}
+
+@media screen and (max-width: 430px){  
+    .article_image {
+        max-width: 20em;
+        max-height: 12em;
+    }
+
+    article{
+        width: 100%;
+      
+       
+    }
+
+ }

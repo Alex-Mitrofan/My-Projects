@@ -1,0 +1,94 @@
+.div_articles{
+    padding-top: 2em;
+}
+
+
+.profile_elements {
+    display: flex;
+    flex-direction: column;
+    margin-left: 38%;
+}
+
+.upper_part{
+    display: flex;
+}
+
+.edit{ 
+    display: flex;
+    margin-left: 4em;
+    height: 2em;
+    align-items: center; 
+    font-size:1.2em;
+}
+
+.profile_picture{
+    border-radius: 50%;
+    background-image: url("../images/profile_pic.jpg");
+    width: 5.5em; 
+    height: 5.5em;
+    vertical-align: middle; 
+    background-size: auto 100%;
+    margin-left: 3em;
+}
+
+.edit_icon {
+    background-image: url("../images/edit_icon.png");
+    background-size: auto 100%;
+    width: 1.1em; 
+    height: 1.1em;
+}
+
+.profile_elements ul{
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+     
+    padding-left: 0;
+}
+
+.profile_elements ul li {
+    padding: 1em;
+    font-size: 1em;   
+}
+
+.export{
+    font-size:1.2em;
+    height: 2em;
+    margin-left: 0.5em;
+    width: 7em;
+    margin-bottom: 2em;
+    
+}
+
+nav ul li:nth-child(2){
+    border-bottom: 0.2em solid rgb(181, 209, 224);
+}
+
+nav ul li:nth-child(2) a{
+    color: white;
+}
+
+@media screen and (max-width: 545px){
+    .div_articles{
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 480px){
+    .div_articles{
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 435px){
+    .div_articles{
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 400px){
+    .div_articles{
+        width: 50%;
+    }
+}

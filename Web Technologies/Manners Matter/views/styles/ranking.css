@@ -1,0 +1,306 @@
+#Score{
+    display:inline-flex;
+    margin-top: 0em;
+}
+#container-places{
+    display:flex;
+    width: 40em;
+    height: 100%;
+    margin-left:0em;
+    padding-top:5em;
+    
+}
+
+.podium{  
+  width: 100%;
+  
+}
+
+.podium_image{
+  background-image: url("../images/podium.png");
+  width: 26.4em; 
+  height: 20em;
+  justify-content: center;
+  background-size: auto 100%;
+  left:10%;
+}
+
+.best-ones{
+    display:flex;
+    align-items: start;
+    align-content: flex-end;
+    flex-direction: column;
+    margin-bottom: 1em;
+   
+    
+}
+.first-place{
+  /*background-color:yellow;*/
+  font-size: 1em;
+  text-align: center;
+  height:10em;
+  width: 10em;
+  margin-right: 0.4em; 
+  margin-top:5em;
+  
+}
+
+.first_place_image{
+  border-radius: 50%;
+  width: 5em; 
+  height: 5em;
+  margin-left:0.4em;
+  margin-top:-0.95em;
+  background-size: auto 100%;
+}
+
+.second-place{
+ /* background-color: gray;*/
+  text-align: center;
+  height: 6em;
+  width: 10em;
+  float:left;
+  margin-top:6em;
+  margin-right: 0em;
+  margin-left:0em;
+}
+.second_place_image{
+  border-radius: 50%;
+  width: 5em; 
+  height: 5em;
+  margin-left:1.5em;
+  margin-top:0.8em;
+  background-size: auto 100%;
+
+}
+.third-place{
+  /*background-color: brown;*/
+  text-align: center;
+  height: 4em;
+  width: 10em;
+  float:right;
+  margin-top: 8em;
+  margin-right:0em;
+   
+}
+.third_place_image{
+  border-radius: 50%;
+  width: 5em; 
+  height: 5em;
+  margin-left:0;
+  margin-top:-1em;
+  margin-right: 3.5em;
+  background-size: auto 100%;
+}
+p{
+  margin-top:-0.1em;
+  border-color: black;
+  border-radius: 15%;
+  font-weight: bold;
+ 
+  
+}
+
+
+nav ul li:nth-child(5){
+  border-bottom: 0.2em solid rgb(181, 209, 224);
+}
+
+nav ul li:nth-child(5) a{
+  color: white;
+}
+.table{
+  height:30em;
+  overflow: auto;
+}
+table {
+  width: 100%;
+  table-layout: fixed;
+  min-width: 15em;
+}
+thead th{
+  position: sticky;
+  top:0;
+  background-color: #f6f9fc;
+  color:#8493a5;
+  font-size:1.2em;
+}
+th,td{
+  border-bottom: 1px solid #dddddd;
+  padding: 10px 20px;
+  word-break: break-all;
+  text-align: left;
+}
+td img{
+  height: 2em;
+  width: 2em;
+  object-fit:cover;
+  border-radius:15px;
+  border:5px solid gray;
+  vertical-align: middle;
+  margin-left: 5px;
+}
+tr:hover td{
+  color :rgb(210, 190, 190);
+  cursor:pointer;
+  background-color: white;
+}
+.pagination
+{
+  display:flex;
+  justify-content: end;
+  width:70%;
+  padding:10px 20px;
+}
+.pagination div{
+padding: 10px;
+border:2px solid #d5d0d0;
+height:40px;
+width:40px;
+border-radius:100%;
+display:flex;
+justify-content: center;
+align-items: center;
+background-color:rgb(111 123 141);
+color:white;
+box-shadow:0px 0px 4px 0px ;
+margin:0 5px;
+}
+
+
+
+
+@media screen and (max-width: 1170px){
+  .pagination{
+      width:78%;
+  }    
+}
+
+
+
+
+@media screen and (max-width: 990px){
+  .pagination{
+      width:85%;
+  }    
+}
+
+
+
+@media screen and (max-width: 745px){
+  .pagination{
+      width:80%;
+  } 
+  .pagination div a{
+      padding: 0.2em;
+  }   
+}
+
+
+@media screen and (max-width: 680px){
+  #container-places{
+    width: 30em;
+  }
+  .podium{  
+    width: 40em;
+    
+  }
+
+  th,td{
+    border-bottom: 1px solid #dddddd;
+    padding: 6px 12px;
+    word-break: break-all;
+    text-align: left;
+  }
+  table {
+    max-width: 35em;
+  }
+  
+}
+
+
+
+@media screen and (max-width: 680px){
+  .pagination{
+      width:90%;
+  } 
+}
+
+@media screen and (max-width: 675px){
+ 
+  .podium{
+    width: 50%;
+  }
+  
+  }
+  
+
+@media screen and (max-width: 657px){
+.best-ones{
+  width: 90%;
+}
+ 
+}
+
+@media screen and (max-width: 657px){
+  .pagination div{
+    height: 1.6em;
+  }
+}
+
+@media screen and (max-width: 530px){
+  .pagination{
+      width:100%;
+  } 
+  .pagination div a{
+      margin:0.1em;
+  }
+}
+
+@media screen and (max-width: 511px){
+  .best-ones{
+    width: 90%;
+  }
+  .podium{
+    width: 40%;
+  }
+  #container-places{
+    display: none;
+   
+  }
+  .podium_image{
+    display: none;
+   
+  }
+}
+
+@media screen and (max-width: 495px){
+  thead th{
+    font-size: 0.9em;
+  }
+}
+
+
+@media screen and (max-width: 460px){
+  .pagination div a{
+     height: 2em;
+     width: 2em;
+  }
+
+}
+
+@media screen and (max-width: 455px){
+  .pagination div{
+    height: 1.2em;
+  }
+}
+
+@media screen and (max-width: 416px){
+  .pagination div {
+    height: 0.5em;
+    margin: 0.1em;
+    width: 70%;
+  }
+ 
+
+}

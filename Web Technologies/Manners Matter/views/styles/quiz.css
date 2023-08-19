@@ -1,0 +1,135 @@
+ 
+main {
+    /*background-image: url("../images/quiz_background.png");*/
+    /*background-size: cover;*/
+    background-image:linear-gradient(90deg,rgb(16, 17, 16), rgb(153, 167, 191), rgb(138, 138, 113));
+   
+}
+
+
+section {
+    margin: 1em; 
+    width: 75%;
+    box-sizing: border-box;
+    border : solid ;
+    border-color: white;
+    margin-top: 2em;
+    border-radius:8%;
+}
+
+.div_articles {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    justify-content: center;
+    margin-right: 3.4em;
+    
+}
+
+ 
+
+a {
+    text-decoration: none;
+  }
+
+a:link {
+    color: rgb(0, 0, 0); 
+}
+
+ 
+a:visited{ 
+    color: rgb(0, 0, 0); 
+}
+
+ @font-face {
+    font-family: Logo;
+    src: url("../fonts/LilitaOne-Regular.ttf");
+ }
+
+
+ h1{
+    color:rgb(185, 227, 250);
+    font-size:large;
+    text-align: center;
+   /* margin-right:5em;*/
+ }
+ p.current-question{
+    color:rgb(185, 227, 250);
+    margin-left:1em;
+ }
+ .next-question{
+    float:right;
+    height: 3em;
+    width: 15%;
+    margin-right:1.5em;
+    border-radius: 5em;
+    background-color: rgb(185, 227, 250);
+ }
+.question{
+   text-align: center;
+   color:rgb(185, 227, 250);
+   /*margin-right:1.5em;*/
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    padding-left:3.5em;
+}
+label:first-child{
+    padding-top:1em;
+}
+label{
+    color:rgb(185, 227, 250);
+    padding-bottom: 2em;
+}
+
+@media screen and (max-width:1168px) {
+
+     .next-question{
+        width: 20%;
+     }
+}
+
+@media screen and (max-width:765px) {
+
+    .next-question{
+       width: 25%;
+    }
+}
+
+@media screen and (max-width:605px) {
+
+    .next-question{
+       width: 30%;
+    }
+}
+
+@media screen and (max-width:512px) {
+
+    .next-question{
+       width: 35%;
+    }
+}
+
+@media screen and (max-width:446px) {
+
+    .next-question{
+       width: 40%;
+    }
+}
+
+@media screen and (max-width:424px) {
+
+    .next-question{
+       width: 45%;
+    }
+}
+
+@media screen and (max-width:388px) {
+
+    .next-question{
+       width: 50%;
+    }
+}

@@ -1,0 +1,86 @@
+
+p{
+    display:flex;
+}
+img{
+    float:right;
+    padding-bottom: 3em;
+    position: sticky ;
+    width: 70%;
+    height: 70%;
+}
+.attention{
+    color:red;
+    font-size: 1em;
+    font-weight: bold;
+    margin-top:1em;
+}
+.info-challenge{
+    display: flex;
+    margin-top: 4em;
+    
+}
+form label input{
+    display:flex;
+    justify-content: space-between;
+}
+label{
+    margin-right: 2em;
+}
+img{
+    height: 15em;
+    width: 20em;
+    margin-right: 1em;
+  
+}
+span input{
+    width: auto;
+    height: auto;
+    border-radius: 5em;
+    margin-left: 5em;
+    text-align: center;
+
+}
+.content{
+    margin-left: 1em;
+}
+
+nav ul li:nth-child(4){
+    border-bottom: 0.2em solid rgb(181, 209, 224);
+}
+
+nav ul li:nth-child(4) a{
+    color: white;
+}
+
+.start_button{
+    background-color: rgb(140, 222, 171);
+    border-radius: 1em;
+    padding: 0.4em 1em;
+    margin-top: 2em;
+}
+
+@media screen and (max-width: 980px){
+    form{
+        margin-bottom: 2em;
+    }
+}
+
+@media screen and (max-width: 720px){
+    img{
+        display:none;
+    }
+}
+
+@media screen and (max-width: 487px){
+    label{
+        margin-right: 1.2em;
+    }
+}
+
+@media screen and (max-width: 431px){
+  
+   form label:nth-child(1){
+    display: block;
+    }
+}
