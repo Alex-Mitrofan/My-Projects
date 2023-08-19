@@ -1,0 +1,27 @@
+CDCL
+
+UNIT PROPAGATION: If an unsatisfied clause has all but one of its literals or variables evaluated at False,
+then the free literal must be True in order for the clause to be True. For example, if the below unsatisfied
+clause is evaluated with A=False and B=False we must have C=True n order for the clause (A v B v C)  to be true.
+
+On the left half of the screen there is the Decision Tree, and on the right part there is the Implication Graph.
+
+In Decision Tree a blue arrow means the level where CDCL back jumps.
+
+In Implication Graph a red edge means an edge that lead to a conflict and must be cut.
+
+
+DPLL
+
+A GREEN node in decision tree means that formula is SAT following that path, and a RED circle means that formula
+is unsatisfiable.
+
+Final solution for formula may include nodes colored in black (default color). That means that those nodes could
+be either True or False and the final formula will be satisfiable.
+
+WalkSAT
+
+The nodes in graph represent each variable, and there is an edge between two nodes if the nodes are in the same 
+clause.
+A node is colored GREEN if the variable inside it was assigned True value, and it is colored RED if the variable 
+was assigned False value.

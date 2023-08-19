@@ -1,0 +1,452 @@
+#:kivy 2.1.0
+ 
+WindowManager:
+    MenuWindow:
+    CDCLWindow:
+    HelpWindow:
+   
+<CDCLWindow>:
+    name: "cdcl"
+    MainWidget:
+        id: mainwidget
+
+
+<MenuWindow>:
+    name: "menu"
+    BoxLayout:
+        orientation: "vertical"
+
+        MenuHeader:
+            size_hint: 1, 0.1
+            canvas.before:
+                Color:
+                    rgb: 1, 0.81, 0.52
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+            BoxLayout:
+                orientation: "horizontal"
+                Label:
+                    size_hint: 0.89, 1
+                    font_size: 22
+                    color: (0,0,0,1)
+                    text: "Choose a formula and an algorithm."
+                Button:
+                    id: start_button
+                    size_hint: 0.1, 0.7
+                    text: "START"
+                    disabled: True
+                    on_release:
+                        app.root.current = "cdcl"
+                        app.root.transition.direction = 'left'
+                    on_press: self.parent.parent.on_start_press()
+                    font_size: 18
+                    color: (0,0,0,1)
+                    background_normal: ''
+                    background_color: 0.8, 0.55, 0.35, 1
+                     
+                    pos_hint: {"center_y": 0.5, "center_x": 1}
+                    padding: 10,20
+                    margin: 30
+                Label:
+                    size_hint: 0.01, 1
+                  
+              
+        MenuMain:
+            size_hint: 1, 0.9
+            orientation: "horizontal"
+            canvas.before:
+                Color:
+                    rgb: 1, 0.88, 0.65
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+            FormulaMenu:
+                size_hint: 0.3, 1
+                Label:
+                    id: label_formula
+                    size_hint: 1, None   
+                    size: self.texture_size    
+                    padding_right: "3em"
+                    text: app.label_clauses
+                    markup: True
+                    color: 0,0,0
+                    font_size: 28
+
+            ChooseFormula:
+                size_hint: 0.4, 1
+                BoxLayout:
+                    orientation: "vertical"
+                    BoxLayout:
+                        size_hint: 1, 0.2
+                        orientation: "vertical"
+                        padding: 30
+                        Label:
+                            size_hint: 0.5, 1
+                            font_size: 18
+                            color: (0,0,0,1)
+                            text: 'Give the path of the cnf file:'
+                            pos_hint: {'center_x': 0.5}
+                        TextInput:
+                            size_hint: 0.5, 1
+                            font_size: 18
+                            color: (0,0,0,1)
+                            hint_text: 'Example: file.cnf'
+                            multiline: False   
+                            pos_hint: {'center_x': 0.5}
+                            on_text_validate: self.parent.parent.parent.on_path_validate(self)
+                            
+                        
+                            
+
+                    BoxLayout:
+                        size_hint: 1, 0.2
+                        orientation: "vertical"
+                        padding: 30
+                        Label:
+                            size_hint: 0.5, 1
+                            font_size: 18
+                            color: (0,0,0,1)
+                            text: 'Type your formula as a list of lists:'
+                            pos_hint: {'center_x': 0.5}
+                        TextInput:
+                            size_hint: 0.5, 1
+                            font_size: 18
+                            color: (0,0,0,1)
+                            hint_text: 'Example: [[1,2],[-1,2,-3]]'
+                            multiline: False   
+                            pos_hint: {'center_x': 0.5}
+                            on_text_validate: self.parent.parent.parent.on_text_validate(self)
+                  
+                    BoxLayout:
+                        size_hint: 1, 0.4
+                        BoxLayout:
+                            orientation: "vertical"
+                            spacing: 10
+                            padding: 0, 0, 0, 40
+                            Label:
+                                font_size: 18
+                                color: (0,0,0,1)
+                                size_hint: 0.5, 0.1
+                                text: "Choose an example:"
+                                pos_hint: {'center_x': 0.5}
+                            Button:
+                                text: "Example 1 ---- SAT"
+                                id: ex1_button
+                                size_hint: 0.5, 0.1
+                                pos_hint: {'center_x': 0.5}
+                                font_size: 18
+                                color: (0,0,0,1)
+                                background_normal: ''
+                                background_color: 0.8, 0.55, 0.35, 1
+                                on_press: self.parent.parent.parent.parent.on_ex1_press()
+                            Button:
+                                text: "Example 2 ---- SAT"
+                                id: ex2_button
+                                size_hint: 0.5, 0.1
+                                pos_hint: {'center_x': 0.5}
+                                font_size: 18
+                                color: (0,0,0,1)
+                                background_normal: ''
+                                background_color: 0.8, 0.55, 0.35, 1
+                                on_press: self.parent.parent.parent.parent.on_ex2_press()
+                            Button:
+                                text: "Example 3 ---- SAT"
+                                id: ex3_button
+                                size_hint: 0.5, 0.1
+                                pos_hint: {'center_x': 0.5}
+                                font_size: 18
+                                color: (0,0,0,1)
+                                background_normal: ''
+                                background_color: 0.8, 0.55, 0.35, 1
+                                on_press: self.parent.parent.parent.parent.on_ex3_press()
+                            Button:
+                                text: "Example 4 ---- UNSAT"
+                                id: ex4_button
+                                size_hint: 0.5, 0.1
+                                pos_hint: {'center_x': 0.5}
+                                font_size: 18
+                                color: (0,0,0,1)
+                                background_normal: ''
+                                background_color: 0.8, 0.55, 0.35, 1
+                                on_press: self.parent.parent.parent.parent.on_ex4_press()
+                            Button:
+                                text: "Example 5 ---- UNSAT"
+                                id: ex5_button
+                                size_hint: 0.5, 0.1
+                                pos_hint: {'center_x': 0.5}
+                                font_size: 18
+                                color: (0,0,0,1)
+                                background_normal: ''
+                                background_color: 0.8, 0.55, 0.35, 1    
+                                on_press: self.parent.parent.parent.parent.on_ex5_press()
+
+
+            ChooseAlgorithm:
+                size_hint: 0.3, 1
+                orientation: "vertical"
+                padding: 50
+                spacing: 20
+                Label:
+                    size_hint: 0.5, 0.1
+                    pos_hint: {'center_x': 0.5}
+                    text: "Choose an algortihm:"
+                    font_size: 18
+                    color: (0,0,0,1)
+                Button:
+                    text: "CDCL"
+                    id: cdcl_button
+                    size_hint: 0.5, 0.1
+                    pos_hint: {'center_x': 0.5}
+                    font_size: 18
+                    color: (0,0,0,1)
+                    background_normal: ''
+                    background_color: 0.8, 0.55, 0.35, 1
+                    on_press: self.parent.on_button_cdcl_press()
+                Button:
+                    text: "DPLL"
+                    id: dpll_button
+                    size_hint: 0.5, 0.1
+                    pos_hint: {'center_x': 0.5}
+                    font_size: 18
+                    color: (0,0,0,1)
+                    background_normal: ''
+                    background_color: 0.8, 0.55, 0.35, 1
+                    on_press: self.parent.on_button_dpll_press()
+                Button:
+                    text: "WalkSAT"
+                    id: walksat_button
+                    size_hint: 0.5, 0.1
+                    pos_hint: {'center_x': 0.5}
+                    font_size: 18
+                    color: (0,0,0,1)
+                    background_normal: ''
+                    background_color: 0.8, 0.55, 0.35, 1
+                    on_press: self.parent.on_button_walksat_press()
+                Label:
+                    size_hint: 0.5, 0.6
+    
+
+<MainWidget>:
+    orientation: "vertical"
+
+    Header:
+        id: header
+                
+    Main:
+        size_hint: 1, 0.9
+        canvas.before:
+            Color:
+                rgb: 1, 0.88, 0.65
+            Rectangle:
+                size: self.size
+                pos: self.pos
+        ClausesPanel:
+            id: clausesPanel
+            size_hint: 0.2, 1
+             
+            Label:
+                id: label
+                size_hint: 1, None   
+                size: self.texture_size    
+                padding_right: "3em"
+                text: app.label_clauses
+                markup: True
+                color: 0,0,0
+                font_size: self.parent.font_size
+                
+        BinaryTree:
+            id: tree
+            size_hint: 0.4, 1
+            
+            #background_color: (142/255, 66/255, 245/255, 1)    
+            canvas.before:
+                Color:
+                    #rgba: self.background_color
+                    rgb: 1, 0.90, 0.80
+                Rectangle:
+                    size: self.size
+                    pos: self.pos   
+                
+            Image:
+                id: decision_tree_image
+                source: 'decision_tree.png'
+                Label:
+                    id: walksat_data
+                    text: ""
+                    font_size: 20
+                    color: 0, 0, 0, 1 
+                    pos: 30, 500
+
+
+                
+                    
+
+        ImplicationGraph:
+            id: implication_graph
+            size_hint: 0.4, 1
+             
+            canvas.before:
+                Color:
+                    rgb: 1, 0.90, 0.80
+                Rectangle:
+                    size: self.size
+                    pos: self.pos   
+            Image:
+                id: implication_graph_image
+                source: 'implication_graph.png'
+
+
+    Footer:
+<Header>:
+    size_hint: 1, 0.1
+    canvas.before:
+        Color:
+            rgb: 1, 0.81, 0.52
+        Rectangle:
+            size: self.size
+            pos: self.pos
+    GridLayout:
+        cols: 10
+        size_hint: 1, 0.7
+        padding: "4dp", 0
+        pos_hint: {"center_y": 0.5}
+        spacing: ("8dp", "0dp")
+        font_size: 18
+        color: (0,0,0,1)
+      
+        Button:
+            text: "Exit"
+            font_size: self.parent.font_size
+            color: self.parent.color
+            background_normal: ''
+            background_color: 0.8, 0.55, 0.35, 1
+            on_release: 
+                app.root.current = "menu"
+                app.root.transition.direction = 'right'
+            on_press: self.parent.parent.on_exit_press()
+        Button:
+            disabled: True
+            background_color: 0, 0, 0, 0
+            font_size: self.parent.font_size
+            color: self.parent.color
+ 
+        Button:
+            disabled: True
+            background_color: 0, 0, 0, 0
+        Button:
+            disabled: True
+            background_color: 0, 0, 0, 0
+        Button:
+            text: "<"
+            id: back
+            font_size: self.parent.font_size
+            color: self.parent.color
+            background_normal: ''
+            background_color: 0.8, 0.55, 0.35, 1
+            disabled: True
+            on_press: self.parent.parent.on_button_back_press()
+        Button:
+            text: ">"
+            id: next
+            font_size: self.parent.font_size
+            color: self.parent.color
+            background_normal: ''
+            background_color: 0.8, 0.55, 0.35, 1
+            on_press: self.parent.parent.on_button_next_press()
+        Button:
+            disabled: True
+            background_color: 0, 0, 0, 0
+        Button:
+            text: "Final"
+            font_size: self.parent.font_size
+            color: self.parent.color
+            background_normal: ''
+            background_color: 0.8, 0.55, 0.35, 1
+            on_press: self.parent.parent.on_button_final_press()
+        Button:
+            text: "Reset"
+            font_size: self.parent.font_size
+            color: self.parent.color
+            background_normal: ''
+            background_color: 0.8, 0.55, 0.35, 1
+            on_press: self.parent.parent.on_button_reset_press()
+        Button:
+            text: "Help" 
+            font_size: self.parent.font_size
+            color: self.parent.color
+            background_normal: ''
+            background_color: 0.8, 0.55, 0.35, 1
+            on_release:
+                app.root.current = "help"
+                app.root.transition.direction = 'left'
+
+
+<Footer>:
+    size_hint: 1, 0.1
+    id: footer
+    Label:
+        canvas.before:
+            Color:
+                rgb: 1, 0.81, 0.52
+            Rectangle:
+                size: self.size
+                pos: self.pos
+        id: footer_text
+        text: app.footer_text
+        font_size: 22
+        color: 0,0,0,1
+
+<HelpWindow>:
+    name: "help"
+    BoxLayout:
+        orientation: "vertical"
+
+        MenuHeader:
+            size_hint: 1, 0.1
+            canvas.before:
+                Color:
+                    rgb: 1, 0.81, 0.52
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+            BoxLayout:
+                orientation: "horizontal"
+                Label:
+                    size_hint: 0.01, 1
+                Button:
+                    id: help_button
+                    size_hint: 0.1, 0.7
+                    text: "Back"
+                    on_release:
+                        app.root.current = "cdcl"
+                        app.root.transition.direction = 'right'
+                    on_press: self.parent.parent.on_start_press()
+                    font_size: 18
+                    color: (0,0,0,1)
+                    background_normal: ''
+                    background_color: 0.8, 0.55, 0.35, 1
+                    pos_hint: {"center_y": 0.5, "center_x": 1}
+                    padding: 10,20
+                    margin: 30
+                Label:
+                    size_hint: 0.89, 1
+                    font_size: 22
+                    color: (0,0,0,1)
+                    text: "Help Page                         "
+                
+                
+
+        MenuMain:
+            size_hint: 1, 0.9
+            orientation: "horizontal"
+            canvas.before:
+                Color:
+                    rgb: 1, 0.90, 0.80
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+            Label:
+                text: app.help_content
+                font_size: 22
+                color: 0,0,0,1
